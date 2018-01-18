@@ -1,0 +1,103 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="leftbar-wrap bts">
+  <a href="#top" class="left-controlbar">
+    <span class="active-area">
+        <span class="bar-desc">Вверх</span>
+    </span>
+  </a>
+</div>
+<a id="top"></a>
+<header class="main-header grid">
+    <div class="title grid">
+        <h1>Ремонт Айфонов</h1>
+    </div>
+    <div class="buttons  bts">
+        <a href="#pre1" class = "btn">О нас</a>
+        <a href="#pre2" class = "btn">Услуги</a>
+        <a href="#pre3" class = "btn">Контакты</a>
+        <a id="pre1"></a>
+    </div>
+
+</header>
+<section class="about-us grid">
+    <div class="left-item">
+        <div class="sectitle">
+            <h2>Наш девиз - быстро и качественно!</h2>
+        </div>
+        <div class="text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dolor eos fuga laudantium minima obcaecati
+            omnis. Deleniti esse expedita ipsam mollitia placeat qui ratione repellendus similique tenetur, vel. Consectetur, optio.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ab, sapiente at quaerat ipsa voluptates! Similique illo, praesentium sed aperiam, saepe magnam maxime fugiat rem magni minima quia deleniti corrupti! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo tenetur magnam est repellat soluta natus corporis harum, modi voluptatibus sequi expedita. Aspernatur impedit blanditiis, recusandae enim ad voluptas vero unde.</p>
+        </div>
+    </div>
+    <div class="right-item grid">
+        <img src="{% static 'img/sec1.jpg' %}"  width=83% height=83% alt="">
+    </div>
+</section>
+<a id = "pre2"></a>
+<section class="usl">
+    <div class="usltitle">
+        <h2>Мы предлагаем следующие услуги</h2>
+    </div>
+    <div class="uslugi grid">
+        {% for usluga in uslugi %}
+             <div class="usluga">
+                 <div class="uslimg"><a href="{% url "buy_usl" usluga.id %}"><img src="/{{ usluga.image.url }}" alt="" width="40%" height="40%"></a></div>
+                <div class="uslmetatitle">
+                    <h3>{{ usluga.name }}</h3>
+                </div>
+                <div class="uslmeta">
+                    <span>Стоимость: {{ usluga.price }}</span>
+                    <div class="uslmeta-meta">
+                        <p>{{ usluga.meta_opis }}</p>
+                    </div>
+                </div>
+             </div>
+        {% endfor %}
+    </div>
+</section>
+<a id="pre3"></a>
+<section class="contacts">
+    <div class="contacts-title">
+        <h2>Свяжитесь с нами</h2>
+    </div>
+    <div class="contacts-text grid">
+        <div class="paragraph">
+            <p>Если у вас остались какие-либо вопросы, вы  можете написать нам на почту, или воспользоваться формой обратной связи</p>
+            <p>Наша почта: iphone@repair.ru</p>
+            <p>Наш телефон: 8(800)555-35-35</p>
+            <p>Наш Insagram: Demin777</p>
+        </div>
+        <div class="contact-form grid">
+            <div class="contact-form-title">
+                <h3>Мы незамедлительно вам ответим</h3>
+            </div>
+            <div class="contact-form-form">
+                <form action="#" method="POST">
+                    {% csrf_token %}
+                    <table style = "border: 1px solid black;" cellpadding="5" cellspacing="20">
+                        {{ form.as_table }}
+                    </table>
+                    <input type="submit" value="Отправить">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'footer.html' %}
+<script
+    language="javascript"
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+<script language="javascript" src="{% static 'js/scroll.js' %}"></script>
+</body>
+</html>

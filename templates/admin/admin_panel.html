@@ -1,0 +1,47 @@
+{% load staticfiles %}
+<!DOCTYPE "html">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Admin Panel</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<section class="all-uslugi">
+	<div class="usl-row grid">
+	 		<div class="usl-grid-name">
+	 			<span>Наименование</span>
+	 		</div>
+	 		<div class="usl-grid-price">
+	 			<span>Цена</span>
+	 		</div>
+	 		<div class="usl-grid-meta">
+	 			<span>Описание</span>
+	 		</div>
+            <div class="text-center">
+                <span>Изменить</span>
+            </div>
+            <div class="text-center">
+                <span>Удалить</span>
+            </div>
+	 </div>
+	 {% for usluga in uslugi %}
+	 	<div class="usl-row grid table">
+	 		<div class="usl-grid-name">
+	 			<span>{{ usluga.name }}</span>
+	 		</div>
+	 		<div class="usl-grid-price">
+	 			<span>{{ usluga.price }}</span>
+	 		</div>
+	 		<div class="usl-grid-meta">
+	 			<span>{{ usluga.meta_opis }}</span>
+	 		</div>
+            <a href="{% url "edit_usl" usluga.id %}" class="usl-row-btn"><span class="btn-span text-center">Изменить</span></a>
+            <a href="{% url "delete_usl" usluga.id %}" class="usl-row-btn"><span class="btn-span text-center">Удалить</span></a>
+	 	</div>
+	 {% endfor %}
+    <div class="text-center grid-center add-usl-btn"><a href="{% url "add_usl" %}" class="btn">Добавить</a></div>
+</section>
+{% include '../footer.html' %}
+</body>
+</html>

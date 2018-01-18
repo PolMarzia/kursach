@@ -1,0 +1,483 @@
+@font-face {
+    font-family: 'raleway-grid';
+    src: url('../fonts/RalewayRegular.woff') format('woff');
+}
+@font-face {
+    font-family: 'raleway-grid';
+    src: url('../fonts/RalewayBold.woff') format('woff');
+    font-weight: bold;
+}
+body{
+    font-family: raleway-grid, sans-serif;
+}
+h3{
+    margin-bottom: 0;
+}
+.text-center{
+    text-align:center;
+}
+.main-header{
+    background-image: url("../img/bg.jpg");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    margin-top: -10px;
+    align-content: center;
+}
+.main-header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #556E6D;
+    opacity: .92;
+}
+.title{
+    z-index: 1;
+    top: -150px;
+    margin-bottom: 80px;
+}
+.buttons{
+    z-index: 1;
+    display: inline-block;
+    text-align: center;
+}
+.btn{
+    font-family: raleway-grid;
+    padding: 0 40px;
+	display: inline-block;
+	border: none;
+	color: black;
+	text-decoration: none;
+	background-color: #d2d2d2;
+	font-size: 30px;
+	font-weight: 800;
+	border-radius: 2px;
+	text-align: center;
+	position: relative;
+	outline: none;
+	transition: background-color .1s ease;
+	cursor: pointer;
+    min-width: 13vw;
+    min-height: 4vh;
+    align-content: center;
+    animation: strt 1s ease-in;
+}
+.btn::after{
+    animation: strt2 1s ease-in;
+    transition: background-color .2s ease;
+    position: absolute;
+    content: '';
+    height: 4px;
+    bottom: 0;
+    width: 100%;
+    background-color: #595959;
+    opacity: .38;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    left: 0;
+}
+.btn:hover{
+    background-color: #91908d;
+    transition: background-color .2s ease;
+    color: white;
+}
+.btn:hover .btn:after {
+    background-color: #fffcf0;
+}
+.btn:active{
+    top: 3px;
+    transition: top 0.3s linear;
+}
+.title h1{
+    font-size: 62px;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+.left-item, .right-item{
+    margin-top: 10px;
+}
+.sectitle{
+    background-color: #556E6D;
+}
+.right-item{
+    padding-left: 20px;
+    margin-left: 20px;
+    border-left: 1px solid black;
+    align-content: center;
+}
+.about-us{
+    min-height: 50vh;
+    padding-left: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+.usl{
+    min-height: 100vh;
+    margin-top: 20px;
+}
+.uslugi{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+}
+.usluga{
+    margin-bottom: 30px;
+    padding-top: 10px;
+    border: 1px solid black;
+    padding-bottom: 20px;
+}
+.uslmeta-meta{
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+    margin-top: 0px;
+    height: 80px;
+    top: 50px
+}
+.uslmeta-meta p{
+    padding-top: 60px;
+    transition: padding-top 0.3s ease-in;
+}
+.usluga:hover .uslmeta-meta{
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+}
+.usluga:hover .uslmeta-meta p{
+    padding-top: 0;
+    transition: padding-top 0.3s ease-in;
+}
+.usltitle{
+    text-align: center;
+    background-color: #556E6D;
+}
+.uslimg{
+    align-content: center;
+}
+
+.uslimg img{
+    transition: transform 0.3s ease-in;
+}
+.uslimg img:hover{
+    transform: scale(1.08);
+    transition: transform 0.15s ease-in;
+}
+.uslimg, .uslmetatitle, .uslmeta{
+    text-align: center;
+}
+.link{
+    text-decoration: none;
+    color: black;
+}
+.grid{
+    display: grid;
+}
+.paragraph{
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.paragraph p{
+    margin-top: 0;
+}
+.contacts{
+    min-height: 74vh;
+}
+.contacts-text{
+    grid-template-columns: 1fr 1fr;
+}
+.contacts-title{
+    text-align: center;
+    background-color: #556E6D;
+}
+.contact-form-title{
+    text-align: center;
+}
+.contact-form-title h3{
+    margin-top: 0;
+    margin-bottom: 20px
+}
+.contact-form-form{
+    align-content: center;
+    box-sizing: border-box;
+}
+.main-footer{
+    min-height: 20vh;
+    background-color: #556E6D;
+    text-align: center;
+    align-content: center;
+}
+.footer-logo {
+    font-size: 22px;
+}
+.footer-logo span {
+    line-height: 1.16;
+    font-size: 27px;
+}
+.footer-copy {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+@keyframes strt{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes strt2{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: .38;
+    }
+}
+
+.leftbar-wrap {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+ 
+/* описание кнопки «Вверх» */
+.left-controlbar {
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  color: black;
+  opacity: .33;
+}
+ 
+/** Кнопка Назад**/
+.active-area {
+  width: 100px;
+  height: 100%;
+  display: block;
+  text-align: center;
+}
+
+.leftbar-wrap:hover .active-area {
+  background: rgba(85,110,109, 0.2);
+}
+
+.leftbar-wrap .active-area:hover {
+  background: rgba(85,110,109, 0.3);
+}
+
+.bar-desc {
+  top: 50%;
+  position: relative;
+  display: inline-block;
+}
+
+/**Форма**/
+form{
+	max-width: 450px;
+	margin: 0 auto;
+}
+form > div{
+	position: relative;
+	background: white;
+	border-bottom: 1px solid #ccc;
+}
+
+form > div > label{
+	opacity: 0.3;
+	font-weight: bold;
+	position: absolute;
+	top: 22px;
+	left: 20px;
+}
+form > div > input[type="text"],
+form > div > input[type="email"],
+form > div > input[type="tel"],
+form > div > textarea{
+	width: 100%;
+	border: 1px solid black;
+    padding: 20px 0px 20px 15px;
+	background: #EEE;
+}
+
+form > div > input[type="text"]:focus,
+form > div > input[type="email"]:focus,
+form > div > input[type="tel"]:focus,
+form > div > textarea:focus{
+	outline: 0;
+	background: white;
+}
+form > div > input[type="text"]:focus+label,
+form > div > input[type="email"]:focus+label,
+form > div > input[type="tel"]:focus+label,
+form > div > textarea:focus+label{
+	opacity: 0;
+}
+form > div > input[type="text"]:valid,
+form > div > input[type="email"]:valid,
+form > div > input[type="tel"]:valid,
+form > div > textarea:valid{
+	background: url(https://image.freepik.com/free-photo/no-translate-detected_21335495.jpg);
+	background-size: 40px;
+	background-repeat: no-repeat;
+	background-position: 420px 4px;
+}
+form > div > input[type="text"]:valid+label,
+form > div > input[type="email"]:valid+label,
+form > div > input[type="tel"]:valid+label,
+form > div > textarea:valid+label{
+	opacity:0;
+}
+form > div > input[type="text"]:invalid:not(:focus):not(:placeholder-shown),
+form > div > input[type="email"]:invalid:not(:focus):not(:placeholder-shown),
+form > div > input[type="tel"]:invalid:not(:focus):not(:placeholder-shown),
+form > div > textarea:invalid:not(:focus):not(:placeholder-shown){
+	background: pink;
+	background: url(http://branto.ru/Emoji/8/769.png);
+	background-size: 35px;
+	background-repeat: no-repeat;
+	background-position: 420px 8.5px;
+}
+form > div > input[type="text"]:invalid:not(:focus):not(:placeholder-shown)+label,
+form > div > input[type="email"]:invalid:not(:focus):not(:placeholder-shown)+label,
+form > div > input[type="tel"]:invalid:not(:focus):not(:placeholder-shown)+label,
+form > div > textarea:invalid:not(:focus):not(:placeholder-shown)+label{
+	opacity:0;
+}
+form > div > input[type="text"]:invalid:not(:focus):not(:placeholder-shown)~ .reqs,
+form > div > input[type="tel"]:invalid:not(:focus):not(:placeholder-shown)~ .reqs,
+form > div > input[type="email"]:invalid:not(:focus):not(:placeholder-shown)~ .reqs{
+	max-height: 200px;
+	padding: 0 30px 20px 50px;
+}
+form > div .reqs{
+	padding: 0 30px 0 50px;
+	color: #999;
+	max-height: 0;
+	transition: 0.28s;
+	overflow: hidden;
+	color: red;
+	font-style: italic;
+}
+form input[type="submit"]{
+	display: block;
+	width:470px;
+	margin: 20px 0;
+	background: green;
+	color: white;
+	border: 1px solid black;
+	padding: 20px;
+}
+textarea{
+    resize: none;
+    padding-right: 5px;
+}
+.buy{
+    min-height: 23vh;
+}
+.buy-form{
+    min-height: 52vh;
+}
+.title-buy, .title-buy-text{
+    text-align: center;
+}
+.title-buy h1{
+    font-size: 30px;
+}
+.usl-row{
+    grid-template-columns: 33vw 5vw 30vw 12vw 12vw;
+    min-height: 10vh;
+    grid-column-gap: 10px;
+    margin-bottom: 10px;
+    align-content: center;
+    padding-left: 10px;
+    border: 1px solid black;
+}
+.table:hover {
+    background-color: #ebebeb;
+    transition: background-color 0.2s ease-in;
+}
+.all-uslugi{
+    min-height: 80vh;
+}
+
+.usl-row-btn{
+    font-family: raleway-grid;
+    padding: 0 20px;
+	border: none;
+	color: black;
+	text-decoration: none;
+	background-color: #d2d2d2;
+    font-size: 18px;
+	font-weight: 800;
+	border-radius: 2px;
+	text-align: center;
+	position: relative;
+	outline: none;
+	transition: background-color .1s ease;
+    min-height: 4vh;
+    max-width: 7vw;
+	cursor: pointer;
+    align-content: center;
+    margin: auto;
+    animation: strt 1s ease-in;
+}
+.usl-row-btn:hover{
+    background-color: #91908d;
+    transition: background-color .2s ease;
+    color: white;
+}
+.btn-span{
+    position: relative;
+    top: 0.7vh;
+}
+.admin-add-usl{
+    min-height: 75vh;
+}
+.grid-center{
+    align-content: center;
+}
+.add-usl-btn{
+    margin-bottom: 10px;
+}
+.add-usl-btn .btn{
+    padding: 10px;
+}
+.admin-add-usl{
+
+}
+.grn-btn{
+    display: block;
+	width:440px;
+    margin-left: 31vw;
+    text-decoration: none;
+    text-align: center;
+	background: green;
+	color: white;
+	border: 1px solid black;
+    padding: 17.5px;
+    margin-bottom: 20px;
+}
+td input[type="text"], td input[type="email"]{
+    padding-right:124px;
+    padding-left: 10px;
+}
+form input[value="Отправить"]{
+    width:488px;
+}
+form div input[value="Отправить"]{
+    width: 470px;
+}
+form div input[id = "1"]{
+    width: 450px;
+}
+div select{
+    width: 467px;
+    height: 50px;
+    padding-left: 30%;
+    font-size: 30px;
+    border: 1px solid black;
+}

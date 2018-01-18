@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE "html">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Авторизация</title>
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<section class="admin-add-usl grid grid-center">
+	<form action="" method="POST">
+		{% csrf_token %}
+		<div>
+			<input required type="text" name="username" id="username" placeholder=" ">
+			<label for="username">Логин</label>
+		</div>
+        <div>
+        	<input required type="text" name="pass" id="pass" placeholder=" ">
+        	<label for="pass">Пароль</label>
+        </div>
+        <div>
+        	<input type="submit" value="Авторизироваться" id="1">
+        </div>
+	</form>
+</section>
+{% include 'footer.html' %}
+</body>
+</html>

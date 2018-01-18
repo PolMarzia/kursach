@@ -1,0 +1,54 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<section class="buy">
+	<div class="title-buy">
+		<h1>Вы выбрали услугу</h1>
+		<h2>{{ uslugi.name }}</h2>
+	</div>
+	<div class="title-buy-text">
+		<h3>Пожалуйста,выберите модель и напишите ваши данные,чтобы мы смогли связаться с вами</h3>
+	</div>
+</section>
+<section class="buy-form">
+	<form action="#" method="POST">
+        {% csrf_token %}
+		<div>
+			<input required type="text" name="firstname" id="firstname" placeholder=" ">
+			<label for="firstname">Введите имя</label>
+		</div>
+        <div>
+        	<input required type="tel" name="tel" id="tel" placeholder=" ">
+        	<label for="tel">Введите телефон</label>
+         	<div class="reqs">
+         	    Введите существующий телефон
+        	</div>
+        </div>
+        <div>
+            <select name="master" id="master">
+                {% for master in masters %}
+                    {% if master.usl.id == uslugi.id %}
+                        <option value="{{ master.id }}">{{ master.name }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <label for="master">Мастер</label>
+        </div>
+        <div>
+        	<textarea required name="com" id="com" cols="63" rows="10" placeholder=" "></textarea>
+            <label for="com">Введите комментарий</label>
+            <input type="submit" class="jsallert" value="Отправить"/>
+		</div>
+    </form>
+</section>
+{% include 'footer.html' %}
+<script src="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.10/dist/js/alertify.js"></script>
+<script language="javascript" src="{% static 'js/alertscript.js' %}"></script>
+</body>
+</html>
